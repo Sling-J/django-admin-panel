@@ -78,27 +78,30 @@ html body .content {
    background: #313d4f;
 }
 
-.aside-menu__logout {
+.default-btn {
    text-transform: uppercase;
    background: #259af3;
    border: none;
    outline: none;
    color: #fff;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+.default-btn:hover {
+   background: #137dcf;
+}
+
+.default-btnt:active {
+   background: #006cbf;
+}
+
+.aside-menu__logout {
    width: 90%;
    display: block;
    padding: 10px 0;
    bottom: 20px;
    left: 5%;
-   cursor: pointer;
-   transition: all 0.3s;
-}
-
-.aside-menu__logout:hover {
-   background: #137dcf;
-}
-
-.aside-menu__logout:active {
-   background: #006cbf;
 }
 
 .content-header {
@@ -149,8 +152,8 @@ html body .content {
 }
 
 .users-panel__field input {
-   padding: 10px 0;
-   width: 200px;
+   padding: 10px 15px 10px 0;
+   width: 170px;
    border: none;
    outline: none;
    border-bottom: 1px solid #d0d3d9;
@@ -165,6 +168,10 @@ html body .content {
    border-bottom: 1px solid #d0d3d9;
    outline: none;
    padding: 10px 0;
+}
+
+.users-panel__field button {
+   padding: 7px 50px;
 }
 
 .users-panel,
