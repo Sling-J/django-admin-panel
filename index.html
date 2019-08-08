@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="./css/font-awesome.min.css">
+   <link rel="stylesheet" href="./css/uikit.min.css">
+   <script src="./js/uikit.min.js"></script>
+   <script src="./js/uikit-icons.min.js"></script>
+   <title>Admin</title>
+</head>
+<body>
+   <div uk-grid>
+      <aside class="aside-panel uk-flex">
+         <div class="aside-container">
+            <p class="aside-title">Technodom</p>
+         </div>
+
+         <div class="aside-menu">
+            <p class="aside-menu__title">Menu</p>
+
+            <ul class="uk-nav uk-nav-default aside-menu__switcher" uk-switcher="connect: #component-nav; animation: uk-animation-fade">
+               <li><a href="#">Users</a></li>
+               <li><a href="#">Attendance</a></li>
+               <li><a href="#">Turnstiles</a></li>
+               <li><a href="#">Skip user</a></li>
+            </ul>
+
+            <button class="aside-menu__logout">Logout</button>
+         </div>
+      </aside>
+
+      <div class="uk-width-expand content">
+         <div class="content-header">
+            <div class="content-header-wrapper uk-flex uk-flex-between uk-flex-middle">
+               <h1 class="content-header__title">Myrzagassimov Nurel</h1>
+
+               <div class="content-header__info uk-flex uk-flex-middle">
+                  <div class="content-header__img">
+                     <img src="./img/Face.png" alt="Avatar">
+                     <div class="content-header__img__overlay"></div>
+                  </div>
+
+                  <p class="content-header__status">Administrator</p>
+               </div>
+            </div>
+         </div>
+
+         <ul id="component-nav" class="uk-switcher">
+            <li>
+               <div class="users-container">
+                  <div class="content-wrapper">
+                     <div class="users-panel">
+                        <form>
+                           <div class="uk-flex uk-flex-between uk-flex-middle">
+                              <div class="uk-flex uk-flex-middle">
+                                 <div class="users-panel__field">
+                                    <label>
+                                       <input type="text" placeholder="Поиск ...">
+                                    </label>
+                                 </div>
+   
+                                 <div class="users-panel__select">
+                                    <label>
+                                       <select>
+                                          <option value="username">Username</option>
+                                          <option value="first-name">First name</option>
+                                          <option value="last-name">Last name</option>
+                                          <option value="email">Email</option>
+                                          <option value="staff-status">Staff status</option>
+                                       </select>
+                                    </label>
+                                 </div>
+                              </div>
+   
+                              <div class="users-panel__field">
+                                 <button>Поиск</button>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+
+                     <div class="users-box">
+                        <table class="users-table">
+                           <thead>
+                              <tr>
+                                 <td>Username</td>
+                                 <td>First name</td>
+                                 <td>Last name</td>
+                                 <td>Email</td>
+                                 <td>Staff status</td>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>Nurel</td>
+                                 <td>Nurel</td>
+                                 <td>Myrzagassimov</td>
+                                 <td>nurel@gmail.com</td>
+                                 <td class="users-status-box">
+                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </li>
+         </ul>
+      </div>
+   </div>
+</body>
+</html>
