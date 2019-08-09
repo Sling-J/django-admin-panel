@@ -62,8 +62,69 @@
                               </label>
                            </div>
 
-                           <div class="users-panel__field">
-                              <button class="default-btn">Поиск</button>
+                           <div class="users-panel-box uk-flex">
+                              <div class="users-panel__field">
+                                 <button class="default-btn">Поиск</button>
+                              </div>
+
+                              <div class="users-panel__field">
+                                 <button class="default-btn" type="button" uk-toggle="target: #modal-example">Добавить пользователя</button>
+
+                                 <div id="modal-example" class="add-user-modal" uk-modal>
+                                    <div class="uk-modal-dialog uk-modal-body">
+                                       <h2 class="text-title uk-modal-title">Добавление пользователя</h2>
+
+                                       <div class="add-user-modal__content">
+                                          <form>
+                                             <div class="uk-margin add-user-modal__field">
+                                                <div class="uk-inline">
+                                                   <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                                   <input class="uk-input" type="text" placeholder="Имя пользователя">
+                                                </div>
+                                             </div>
+
+                                             <div class="uk-margin add-user-modal__field">
+                                                <div class="uk-inline">
+                                                   <span class="uk-form-icon" uk-icon="icon: users"></span>
+                                                   <input class="uk-input" type="text" placeholder="Имя">
+                                                </div>
+                                             </div>
+
+                                             <div class="uk-margin add-user-modal__field">
+                                                <div class="uk-inline">
+                                                   <span class="uk-form-icon" uk-icon="icon: bell"></span>
+                                                   <input class="uk-input" type="text" placeholder="Фамилия">
+                                                </div>
+                                             </div>
+
+                                             <div class="add-user-modal__field uk-flex uk-flex-between">
+                                                <div>
+                                                   <label><input class="uk-checkbox" type="checkbox"> Active</label>
+                                                </div>
+                                                <div>
+                                                   <label><input class="uk-checkbox" type="checkbox"> Staff status</label>
+                                                </div>
+                                                <div>
+                                                   <label><input class="uk-checkbox" type="checkbox"> Superuser</label>
+                                                </div>
+                                             </div>
+                                          </form>
+                                       </div>
+
+                                       <p class="uk-text-right">
+                                          <button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
+                                          <button class="uk-button uk-button-primary" type="button">Сохранить</button>
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <div class="users-panel__remove">
+                                 <button>
+                                    Удалить
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                 </button>
+                              </div>
                            </div>
                         </div>
                      </form>
@@ -76,7 +137,7 @@
                            <div>First name</div>
                            <div>Last name</div>
                            <div>Email</div>
-                           <div>Staff status</div>
+                           <div>Permission</div>
                         </div>
 
                         <div class="users-table__body">
@@ -97,445 +158,7 @@
                                  <div class="users-table__status-box">
                                     <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
                                     <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
-                                 </div>
-                              </div>
-                           </a>
-
-                           <a class="users-table__link" href="user-detail.html">
-                              <div class="users-table__row main-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span>Nurel</span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Nurel</div>
-                                 <div>Myrzagassimov</div>
-                                 <div>nurel@gmail.com</div>
-                                 <div class="users-table__status-box">
-                                    <i class="fa fa-check-circle" aria-hidden="true" uk-tooltip="Active"></i>
-                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true"
-                                       uk-tooltip="Superuser"></i>
+                                    <i class="fa fa-user-secret users-table__status-box-active" aria-hidden="true" uk-tooltip="Superuser"></i>
                                  </div>
                               </div>
                            </a>

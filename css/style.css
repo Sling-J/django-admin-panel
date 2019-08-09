@@ -87,6 +87,22 @@ html body .content {
 
 /* Styles */
 
+.add-user-modal__content {
+   width: 70%;
+   margin: 30px auto;
+}
+
+.add-user-modal__field .uk-inline {
+   width: 100%;
+   font-size: 14px;
+}
+
+.add-user-modal .uk-modal-body h2 {
+   text-align: center;
+   font-size: 23px;
+   color: #354052;
+}
+
 .content {
    margin-left: 17.5% !important;
 }
@@ -139,8 +155,12 @@ html body .content {
    background: #313d4f;
 }
 
+.to-back {
+   cursor: pointer;
+   padding: 9px 30px;
+}
+
 .default-btn {
-   text-transform: uppercase;
    background: #259af3;
    border: none;
    outline: none;
@@ -153,7 +173,7 @@ html body .content {
    background: #137dcf;
 }
 
-.default-btnt:active {
+.default-btn:active {
    background: #006cbf;
 }
 
@@ -163,6 +183,11 @@ html body .content {
    padding: 10px 0;
    bottom: 20px;
    left: 5%;
+}
+
+.users-detail-desc-ava___real {
+   display: block;
+   width: 100%;
 }
 
 .content-header {
@@ -221,8 +246,38 @@ html body .content {
    border-bottom: 1px solid #d0d3d9;
 }
 
+.users-panel-box {
+   flex-wrap: wrap;
+}
+
+.users-panel-box div:first-child {
+   margin-left: 0;
+}
+
+.users-panel-box div {
+   margin-left: 10px;
+}
+
 .users-panel__field button {
    padding: 7px 50px;
+}
+
+.users-panel__remove button {
+   border: none;
+   outline: none;
+   transition: all 0.3s;
+   cursor: pointer;
+   background: tomato;
+   color: #fff;
+   padding: 7px 12px;
+}
+
+.users-panel__remove button:hover {
+   background: #e85238;
+}
+
+.users-panel__remove button:active {
+   background: #c9452e;
 }
 
 .users-panel,
@@ -357,6 +412,15 @@ html body .content {
    font-size: 15px;
    color: #b5b5b5;
    margin-top: 3px;
+}
+
+.users-detail-desc-ava__save button {
+   padding: 7px 0;
+   width: 100%;
+}
+
+.users-detail-desc-ava__detail {
+   margin-top: 25px;
 }
 
 .users-detail-desc-ava__detail p {
