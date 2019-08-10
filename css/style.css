@@ -160,6 +160,11 @@ html body .content {
    padding: 9px 30px;
 }
 
+.to-back a span {
+   left: -30px;
+   top: 2px;
+}
+
 .default-btn {
    background: #259af3;
    border: none;
@@ -288,7 +293,7 @@ html body .content {
 .users-box,
 .users-detail-attendance-table {
    padding-top: 10px;
-   height: 65vh;
+   height: 62vh;
    overflow-y: scroll;
    margin-bottom: 20px;
 }
