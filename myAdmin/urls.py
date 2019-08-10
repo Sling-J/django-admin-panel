@@ -8,6 +8,7 @@ from myAdmin import views
 # )
 
 urlpatterns = [
-    path('admin/', views.index, name='index'),
-
+    path('', views.base_admin, name='base_admin'),
+    path('users/', views.index, name='index'),
+    path('attendances/', views.attendance, name='attendance'),
 ]

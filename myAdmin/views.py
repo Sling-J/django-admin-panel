@@ -4,13 +4,16 @@ from userAPI.models import UserProfile as User
 from userAPI.admin import UserProfileAdmin
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from turnstile.models import Attendance
+
+@login_required
+def base_admin(request):
+  return render(request, 'myAdmin/base_admin.html')
 
 @login_required
 def index(request):
   users = User.objects.all()
   search_fields = UserProfileAdmin.search_fields
-  bla = "USERLAR"
-  
   user = request.GET.get('q')
   if user:
     users = users.filter(
@@ -21,6 +24,13 @@ def index(request):
     ).distinct()
   context={'users':users, 'fields':search_fields}
   return render(request, 'myAdmin/index.html', context)
+
+
+@login_required
+def attendance(request):
+  attendances = Attendance.objects.all()
+  context = {'attendances':attendances}
+  return render(request, 'myAdmin/attendance.html', context)
 # Create your views here.
 
 # def   

@@ -1,399 +1,165 @@
-{% load static %}
-<!doctype html>
-<html lang="ru">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport"
-         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href="{% static 'myAdmin/css/style.css' %}">
-   <link rel="stylesheet" href="{% static 'myAdmin/css/font-awesome.min.css' %}">
-   <link rel="stylesheet" href="{% static 'myAdmin/css/uikit.min.css' %}">
-   <script src="{% static 'myAdmin/js/uikit.min.js' %}"></script>
-   <script src="{% static 'myAdmin/js/uikit-icons.min.js'%}"></script>
-   <title>Admin</title>
-</head>
-<body>
-   <div uk-grid>
-      <aside class="aside-panel uk-flex">
-         <div class="aside-container">
-            <p class="aside-title">Technodom</p>
-         </div>
+{% extends 'myAdmin/base_admin.html' %}
+{% block title %}
+   Users
+{% endblock %}
 
-         <div class="aside-menu">
-            <p class="aside-menu__title">Menu</p>
-
-            <ul class="uk-nav uk-nav-default aside-menu__switcher"
-               uk-switcher="connect: #component-nav; animation: uk-animation-fade">
-               <li><a href="#">Users</a></li>
-               <li><a href="#">Attendance</a></li>
-               <li><a href="#">Turnstiles</a></li>
-               <li><a href="#">Skip user</a></li>
-            </ul>
-
-            <form method="GET" action="{% url 'logout' %}">
-               <button class="aside-menu__logout default-btn">Logout</button>
-            </form>
-         </div>
-      </aside>
-
-      <div class="uk-width-expand content">
-         {% if user.is_authenticated %}
-            <div class="content-header">
-               <div class="content-header-wrapper uk-flex uk-flex-between uk-flex-middle">
-                  <h1 class="content-header__title">{{ user.username }}</h1>
-
-                  <div class="content-header__info uk-flex uk-flex-middle">
-                     <div class="content-header__img">
-                        <img src="{% static 'myAdmin/img/Face.png'%}" alt="Avatar">
-                        <div class="content-header__img__overlay"></div>
+{% block content %}
+   <li>
+      <div class="content-wrapper">
+         <div class="users-panel">
+            <div class="uk-flex uk-flex-between uk-flex-middle">
+               <form method="GET" action=''>
+                  <div class="uk-flex uk-flex-bottom">
+                     <div class="users-panel__field">
+                        <label>
+                           <input type="text" name='q' placeholder="Поиск ..." value='{{ request.GET.q }}'>
+                        </label>
                      </div>
+                     
+                     <div class="users-panel__field">
+                        <button class="default-btn">Поиск</button>
+                     </div>
+                  </div>
+               </form>
 
-                     <p class="content-header__status">Administrator</p>
+               <div class="users-panel-box uk-flex">
+                  <div class="users-panel__field">
+                     <button class="default-btn" type="button" uk-toggle="target: #modal-example">Добавить пользователя</button>
+
+                     <div id="modal-example" class="add-user-modal" uk-modal>
+                        <div class="uk-modal-dialog uk-modal-body">
+                           <form>
+                              <h2 class="text-title uk-modal-title">Добавление пользователя</h2>
+
+                              <div class="add-user-modal__content">
+                                 <div class="uk-margin add-user-modal__field">
+                                    <div class="uk-inline">
+                                       <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                       <input class="uk-input" type="text" placeholder="Имя пользователя">
+                                    </div>
+                                 </div>
+
+                                 <div class="uk-margin add-user-modal__field">
+                                    <div class="uk-inline">
+                                       <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                       <input class="uk-input" type="text" placeholder="Пароль">
+                                    </div>
+                                 </div>
+
+                                 <div class="add-user-modal-upload-box uk-flex uk-flex-between">
+                                    <div class="add-user-modal__field add-user-modal__upload">
+                                       <div class="js-upload uk-placeholder uk-text-center">
+                                          <span uk-icon="icon: cloud-upload"></span>
+                                          <div uk-form-custom>
+                                             <input type="file" multiple>
+                                             <span class="uk-link">selecting one</span>
+                                          </div>
+                                       </div>
+
+                                       <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+                                    </div>
+
+                                    <div class="add-user-modal__upload">
+                                       <button class="default-btn">Take a picture</button>
+                                    </div>
+                                 </div>
+
+                                 <div class="add-user-modal__field uk-flex uk-flex-between">
+                                    <div>
+                                       <label><input class="uk-checkbox" type="checkbox"> Active</label>
+                                    </div>
+                                    <div>
+                                       <label><input class="uk-checkbox" type="checkbox"> Staff status</label>
+                                    </div>
+                                    <div>
+                                       <label><input class="uk-checkbox" type="checkbox"> Superuser</label>
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <p class="uk-text-right">
+                                 <button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
+                                 <button class="uk-button uk-button-primary" type="button">Сохранить</button>
+                              </p>
+                           <form>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="users-panel__remove">
+                     <button>
+                        Удалить
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                     </button>
                   </div>
                </div>
             </div>
-         {% endif %}
+         </div>
 
-         <ul id="component-nav" class="uk-switcher">
-            <li>
-               <div class="content-wrapper">
-                  <div class="users-panel">
-                     <div class="uk-flex uk-flex-between uk-flex-middle">
-                        <form method="GET" action=''>
-                           <div class="uk-flex uk-flex-bottom">
-                              <div class="users-panel__field">
+         <div class="users-box">
+            <div id="users-table" class="users-table main-table">
+               <h2 class="main-wrapper text-title">Users</h2>
+
+               <form>
+                  <div class="users-table__head main-table__head uk-flex uk-flex-between uk-flex-middle">
+                     <div>
+                        <label uk-tooltip="Выбрать все"><input id="select-all-cb" class="uk-checkbox" type="checkbox"></label>
+                     </div>
+                     <div>Username</div>
+                     <div>First name</div>
+                     <div>Last name</div>
+                     <div>Email</div>
+                     <div>Permission</div>
+                  </div>
+
+                  <div class="users-table__body">
+                     {% for user in users %}
+                        <a class="users-table__link main-table__row" href="user-detail.html">
+                           <div class="users-table__row uk-flex uk-flex-between">
+                              <div>
                                  <label>
-                                    <input type="text" name='q' placeholder="Поиск ..." value='{{ request.GET.q }}'>
+                                    <input class="users-table__checkbox uk-checkbox" type="checkbox">
                                  </label>
                               </div>
-                              
-                              <div class="users-panel__field">
-                                 <button class="default-btn">Поиск</button>
-                              </div>
-                           </div>
-                        </form>
+                              <div class="users-table__username">
+                                 <span>{{ user.username }}</span>
 
-                        <div class="users-panel-box uk-flex">
-                           <div class="users-panel__field">
-                              <button class="default-btn" type="button" uk-toggle="target: #modal-example">Добавить пользователя</button>
-
-                              <div id="modal-example" class="add-user-modal" uk-modal>
-                                 <div class="uk-modal-dialog uk-modal-body">
-                                    <form>
-                                       <h2 class="text-title uk-modal-title">Добавление пользователя</h2>
-
-                                       <div class="add-user-modal__content">
-                                          <div class="uk-margin add-user-modal__field">
-                                             <div class="uk-inline">
-                                                <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                                <input class="uk-input" type="text" placeholder="Имя пользователя">
-                                             </div>
-                                          </div>
-
-                                          <div class="uk-margin add-user-modal__field">
-                                             <div class="uk-inline">
-                                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                                                <input class="uk-input" type="text" placeholder="Пароль">
-                                             </div>
-                                          </div>
-
-                                          <div class="add-user-modal-upload-box uk-flex uk-flex-between">
-                                             <div class="add-user-modal__field add-user-modal__upload">
-                                                <div class="js-upload uk-placeholder uk-text-center">
-                                                   <span uk-icon="icon: cloud-upload"></span>
-                                                   <div uk-form-custom>
-                                                      <input type="file" multiple>
-                                                      <span class="uk-link">selecting one</span>
-                                                   </div>
-                                                </div>
-
-                                                <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
-                                             </div>
-
-                                             <div class="add-user-modal__upload">
-                                                <button class="default-btn">Take a picture</button>
-                                             </div>
-                                          </div>
-
-                                          <div class="add-user-modal__field uk-flex uk-flex-between">
-                                             <div>
-                                                <label><input class="uk-checkbox" type="checkbox"> Active</label>
-                                             </div>
-                                             <div>
-                                                <label><input class="uk-checkbox" type="checkbox"> Staff status</label>
-                                             </div>
-                                             <div>
-                                                <label><input class="uk-checkbox" type="checkbox"> Superuser</label>
-                                             </div>
-                                          </div>
-                                       </div>
-
-                                       <p class="uk-text-right">
-                                          <button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
-                                          <button class="uk-button uk-button-primary" type="button">Сохранить</button>
-                                       </p>
-                                    <form>
+                                 <div class="users-table__detail-img">
+                                    <img
+                                       src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
+                                       alt="User ava">
                                  </div>
                               </div>
-                           </div>
+                              <div>{{ user.first_name }}</div>
+                              <div>{{ user.last_name }}</div>
+                              <div>{{ user.email }}</div>
+                              <div class="users-table__status-box">
+                                 {% if user.is_active %}
+                                    <i class="fa fa-check-circle users-status-box__active" aria-hidden="true" uk-tooltip="Active"></i>
+                                 {% else %}
+                                    <i class="fa fa-check-circle " aria-hidden="true" uk-tooltip="Active"></i>
+                                 {% endif %}
 
-                           <div class="users-panel__remove">
-                              <button>
-                                 Удалить
-                                 <i class="fa fa-trash" aria-hidden="true"></i>
-                              </button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="users-box">
-                     <div id="users-table" class="users-table main-table">
-                        <h2 class="main-wrapper text-title">Users</h2>
-
-                        <form>
-                           <div class="users-table__head main-table__head uk-flex uk-flex-between uk-flex-middle">
-                              <div>
-                                 <label uk-tooltip="Выбрать все"><input id="select-all-cb" class="uk-checkbox" type="checkbox"></label>
-                              </div>
-                              <div>Username</div>
-                              <div>First name</div>
-                              <div>Last name</div>
-                              <div>Email</div>
-                              <div>Permission</div>
-                           </div>
-
-                           <div class="users-table__body">
-                              {% for user in users %}
-                                 <a class="users-table__link main-table__row" href="user-detail.html">
-                                    <div class="users-table__row uk-flex uk-flex-between">
-                                       <div>
-                                          <label>
-                                             <input class="users-table__checkbox uk-checkbox" type="checkbox">
-                                          </label>
-                                       </div>
-                                       <div class="users-table__username">
-                                          <span>{{ user.username }}</span>
-
-                                          <div class="users-table__detail-img">
-                                             <img
-                                                src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                                alt="User ava">
-                                          </div>
-                                       </div>
-                                       <div>{{ user.first_name }}</div>
-                                       <div>{{ user.last_name }}</div>
-                                       <div>{{ user.email }}</div>
-                                       <div class="users-table__status-box">
-                                          {% if user.is_active %}
-                                             <i class="fa fa-check-circle users-status-box__active" aria-hidden="true" uk-tooltip="Active"></i>
-                                          {% else %}
-                                             <i class="fa fa-check-circle " aria-hidden="true" uk-tooltip="Active"></i>
-                                          {% endif %}
-
-                                          {% if user.is_staff %}
-                                             <i class="fa fa-user users-status-box__active" aria-hidden="true" uk-tooltip="Staff"></i>
-                                          {% else %}
-                                             <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                          {% endif %}
-                                          
-                                          {% if user.is_superuser %}
-                                             <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
-                                          {% else %}
-                                             <i class="fa fa-user-secret " aria-hidden="true" uk-tooltip="Superuser"></i>
-                                          {% endif %}
-                                       </div>
-                                    </div>
-                                 </a>
-                              {% endfor %}   
-                           </div>
-                        </form>
-                     </div>
-                  </div>
-               </div>
-            </li>
-
-            <li>
-               <div class="content-wrapper uk-flex uk-flex-between">
-                  <div class="attendance-box users-box">
-                     <h2 class="main-wrapper text-title">Attendance</h2>
-
-                     <div id="users-table" class="users-table main-table">
-                        <form>
-                           <div class="users-table__head main-table__head uk-flex uk-flex-between uk-flex-middle">
-                              <div>Username</div>
-                              <div>Turnstiles</div>
-                              <div>Time</div>
-                           </div>
-
-                           <div class="users-table__body">
-                              <div class="users-table__link attendance-table main-table__row users-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span><a href="user-detail.html">Nurel</a></span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Turnstile 1</div>
-                                 <div>17:45</div>
-                              </div>
-
-                              <div class="users-table__link attendance-table main-table__row users-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span><a href="user-detail.html">Nurel</a></span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Turnstile 1</div>
-                                 <div>17:45</div>
-                              </div>
-
-                              <div class="users-table__link attendance-table main-table__row users-table__row uk-flex uk-flex-between">
-                                 <div class="users-table__username">
-                                    <span><a href="user-detail.html">Nurel</a></span>
-
-                                    <div class="users-table__detail-img">
-                                       <img
-                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                          alt="User ava">
-                                    </div>
-                                 </div>
-                                 <div>Turnstile 1</div>
-                                 <div>17:45</div>
-                              </div>
-                           </div>
-                        </form>
-                     </div>
-                  </div>
-
-                  <div class="attendance-table__search">
-                     <form>
-                        <div>
-                           <h2 class="text-title">Filter by</h2>
-
-                           <ul class="attendance-panel__field users-detail-attendance__filter uk-flex uk-flex-between uk-flex-middle">
-                              <li>All</li>
-                              <li>Day</li>
-                              <li>Week</li>
-                              <li>Month</li>
-                           </ul>
-                        </div>
-                     </form>
-                  </div>
-
-               </div>
-            </li>
-
-            <li>
-               <div class="content-wrapper">
-                  <div class="users-box">
-                     <h2 class="main-wrapper text-title">Turnstiles</h2>
-
-                     <div id="users-table" class="users-table main-table">
-                        <form>
-                           <div class="turnstile-head uk-flex uk-flex-between uk-flex-middle">
-                              <div>Turnstiles</div>
-                              <div>Status</div>
-                           </div>
-
-                           <div class="users-table__body">
-                              <div class="main-table__row turnstile-row uk-flex uk-flex-between">
-                                 <div>Turnstile 1</div>
-                                 <div class="turnstile-row__status">
-                                    <i class="fa fa-check-circle turnstile-status__active" aria-hidden="true"></i>
-                                    <i class="fa fa-times turnstile-status__disable" aria-hidden="true"></i>
-                                 </div>
-                              </div>
-                           </div>
-                        </form>
-                     </div>
-                  </div>
-               </div>
-            </li>
-         </ul>      
-      </div>
-
-         {% comment %} <ul id="component-nav" class="uk-switcher">
-            <li>
-               <div class="users-container">
-                  <div class="content-wrapper">
-                     <div class="users-panel">
-                        <form method='GET' action=''>
-                           <div class="uk-flex uk-flex-between uk-flex-middle">
-                              <div class="uk-flex uk-flex-middle">
-                                 <div class="users-panel__field">
-                                    <label>
-                                       <input type="text" name='q' placeholder="Поиск ..." value='{{ request.GET.q }}'>
-                                    </label>
-                                 </div>
-                              </div>
-                                 <div class="users-panel__field">
-                                    <button class="default-btn">Поиск</button>
-                                 </div>
-                           </div>
-                        </form>
-                     </div>
-
-                     <div class="users-box">
-                        <table class="users-table">
-                           <thead>
-                              <tr>
-                                 <td>Username</td>
-                                 <td>First name</td>
-                                 <td>Last name</td>
-                                 <td>Email</td>
-                                 <td>Permissions</td>
-                              </tr>
-                           </thead>
-                           <tbody>
-                              {% for user in users %}
-                              <tr>
+                                 {% if user.is_staff %}
+                                    <i class="fa fa-user users-status-box__active" aria-hidden="true" uk-tooltip="Staff"></i>
+                                 {% else %}
+                                    <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                                 {% endif %}
                                  
-                                 <td>{{ user.username }}</td>
-                                 <td>{{ user.first_name }}</td>
-                                 <td>{{ user.last_name }}</td>
-                                 <td>{{ user.email }}</td>
-                                 <td class="users-status-box">
-                                    {% if user.is_active %}
-                                       <i class="fa fa-check-circle users-status-box__active" aria-hidden="true" uk-tooltip="Active"></i>
-                                    {% else %}
-                                       <i class="fa fa-check-circle " aria-hidden="true" uk-tooltip="Active"></i>
-                                    {% endif %}
-
-                                    {% if user.is_staff %}
-                                       <i class="fa fa-user users-status-box__active" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    {% else %}
-                                       <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
-                                    {% endif %}
-                                    
-                                    {% if user.is_superuser %}
-                                       <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
-                                    {% else %}
-                                       <i class="fa fa-user-secret " aria-hidden="true" uk-tooltip="Superuser"></i>
-                                    {% endif %}
-                                    
-                                 </td>
-                              </tr>
-                              {% endfor %}
-                              
-                           </tbody>
-                        </table>
-                     </div>
+                                 {% if user.is_superuser %}
+                                    <i class="fa fa-user-secret users-status-box__active" aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 {% else %}
+                                    <i class="fa fa-user-secret " aria-hidden="true" uk-tooltip="Superuser"></i>
+                                 {% endif %}
+                              </div>
+                           </div>
+                        </a>
+                     {% endfor %}   
                   </div>
-               </div>
-            </li>
-         </ul> {% endcomment %}
+               </form>
+            </div>
+         </div>
       </div>
-   </div>
+   </li>
+{% endblock %}
    
-   <script src="{% static 'myAdmin/js/main.js' %}"></script>
-</body>
-</html>
