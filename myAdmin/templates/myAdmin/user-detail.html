@@ -1,0 +1,104 @@
+{% extends 'myAdmin/base_admin.html' %}
+{% load static %}
+{% block  title %}
+   {{user.username}} - {{ block.super }}
+{% endblock  %}         
+
+{% block content %}
+   <li>
+      <div class="content-wrapper uk-flex uk-flex-between">
+         <div class="users-detail-box">
+            <div class="users-detail-box_k_info">
+               <div class="users-detail-attendance">
+                  <div class="to-back">
+                     <a class="uk-inline" href="{% url 'index' %}">
+                        <span class="uk-form-icon" uk-icon="icon: chevron-left"></span>
+                        Back
+                     </a>
+                  </div>
+
+                  <div class="users-detail-attendance__header uk-flex uk-flex-between uk-flex-middle">
+                     <h2 class="users-detail-attendance__title text-title">Attendance</h2>
+
+                     <ul class="users-detail-attendance__filter uk-subnav uk-subnav-pill">
+                        <li class="uk-active">All</li>
+                        <li>Day</li>
+                        <li>Week</li>
+                        <li>Month</li>
+                     </ul>
+                  </div>
+
+                  <div class="users-detail-attendance-table main-table">
+                     <div class="users-detail-attendance-table__head main-table__head uk-flex uk-flex-between uk-flex-middle">
+                        
+                        <div>Username</div>
+                        <div>Turnstiles</div>
+                        <div>Time</div>
+                     </div>
+                     
+                     <ul class="users-detail-attendance-table__body">
+                        {% for attendance in  attendances %}
+                           <li class="users-detail-attendance-table__row main-table__row uk-flex uk-flex-between">
+                              <div>{{ attendance.user }}</div>
+                              <div>{{ attendance.turnstile }}</div>
+                              <div>{{ attendance.time }}</div>
+                           </li>
+                        {% endfor %}
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="users-detail-desc">
+            <div class="users-detail-desc-ava">
+               <div class="users-details-desc-ava__user">
+                  <img src="{% static 'myAdmin/img/Pic.png' %}" alt="User Avatar">
+                  <img class="users-details-desc-ava__main" src="{{ user.avatar.url }}" alt="User Avatar">
+               </div>
+
+
+               <div class="users-detail-desc-ava__info">
+                  <h2 class="users-detail-desc-ava__title text-title">{{ user.username }}</h2>
+                  <p class="users-detail-desc-ava__desc">Frontend Developer | 2 year</p>
+               </div>
+
+               <div>
+                  <div class="add-user-modal__field uk-flex uk-flex-between">
+                     <div>
+                        <label><input class="uk-checkbox" type="checkbox"> Active</label>
+                     </div>
+                     <div>
+                        <label><input class="uk-checkbox" type="checkbox"> Staff status</label>
+                     </div>
+                     <div>
+                        <label><input class="uk-checkbox" type="checkbox"> Superuser</label>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="users-detail-desc-ava__detail">
+                  <p>
+                     <span>Email</span>
+                     nurel32@gmail.com
+                  </p>
+
+                  <p>
+                     <span>Mobile</span>
+                     +77757757575
+                  </p>
+
+                  <p>
+                     <span>In Technodom</span>
+                     6 Month
+                  </p>
+               </div>
+
+               <div class="users-detail-desc-ava__save">
+                  <button class="default-btn">Сохранить</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </li>
+{% endblock  %}

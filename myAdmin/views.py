@@ -35,6 +35,12 @@ def attendance(request):
   return render(request, 'myAdmin/attendance.html', context)
 # Create your views here.
 
+def user_detail(request, pk):
+  user = User.objects.get(pk__iexact=pk)
+  attendances = Attendance.objects.filter(user=user.username)
+  context={'user':user, 'attendances': attendances}
+  return render(request, 'myAdmin/user-detail.html', context)
+
 def turnstile(request):
   # turnstiles = 
   return render(request, 'myAdmin/turnstile.html')
