@@ -67,7 +67,7 @@ Turnstiles
                         data-id="{{ user.id }}"
                      >
                         <div class="users-table__username skip-user-table__username">
-                           <span><a href="user-detail.html">{{ user.username }}</a></span>
+                           <span><a href="{{ user.get_absolute_url }}">{{ user.username }}</a></span>
                            
                            <div class="users-table__detail-img">
                               <img src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612" alt="User ava">
