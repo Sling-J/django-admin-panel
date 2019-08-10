@@ -16,51 +16,33 @@
                         <div>Turnstiles</div>
                         <div>Time</div>
                     </div>
-                    <div class="users-table__body">    
+                    <div class="users-table__body">
+                            <!-- <div class="users-table__username">
+                                    <div class="uk-inline">
+                                       <span>{{ user.username }}</span>
+                                       {% if user.avatar %}
+                                          <div class="users-table__detail-img" uk-dropdown>
+                                             <img src="{{ user.avatar.url }}"  alt="User Avatar">
+                                          </div>
+                                       {% endif %}
+                                    </div>
+                                 </div> -->
                         {% for attendance in attendances %}
                             <div class="users-table__link attendance-table main-table__row users-table__row uk-flex uk-flex-between">
                                 <div class="users-table__username">
-                                <span><a href="user-detail.html">{{ attendance.user }}</a></span>
-
-                                <div class="users-table__detail-img">
-                                    <img
-                                        src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                        alt="User ava">
-                                </div>
+                                    <div class="uk-inline">
+                                        <span>{{ user.username }}</span>
+                                        {% if user.avatar %}
+                                            <div class="users-table__detail-img" uk-dropdown>
+                                                <img src="{{ user.avatar.url }}"  alt="User Avatar">
+                                            </div>
+                                        {% endif %}
+                                    </div>
                                 </div>
                                 <div>{{ attendance.turnstile }}</div>
                                 <div>{{ attendance.time }}</div>
                             </div>
                         {% endfor %}
-                    
-
-                        <div class="users-table__link attendance-table main-table__row users-table__row uk-flex uk-flex-between">
-                            <div class="users-table__username">
-                            <span><a href="user-detail.html">Nurel</a></span>
-
-                            <div class="users-table__detail-img">
-                                <img
-                                    src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                    alt="User ava">
-                            </div>
-                            </div>
-                            <div>Turnstile 1</div>
-                            <div>17:45</div>
-                        </div>
-
-                        <div class="users-table__link attendance-table main-table__row users-table__row uk-flex uk-flex-between">
-                            <div class="users-table__username">
-                            <span><a href="user-detail.html">Nurel</a></span>
-
-                            <div class="users-table__detail-img">
-                                <img
-                                    src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                    alt="User ava">
-                            </div>
-                            </div>
-                            <div>Turnstile 1</div>
-                            <div>17:45</div>
-                        </div>
                     </div>
                 </form>
                 </div>
