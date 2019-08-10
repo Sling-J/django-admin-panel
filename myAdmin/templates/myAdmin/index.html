@@ -28,60 +28,8 @@
 
                      <div id="modal-example" class="add-user-modal" uk-modal>
                         <div class="uk-modal-dialog uk-modal-body">
-                           <form>
-                              <h2 class="text-title uk-modal-title">Добавление пользователя</h2>
+                           {% include 'myAdmin/register.html' %}
 
-                              <div class="add-user-modal__content">
-                                 <div class="uk-margin add-user-modal__field">
-                                    <div class="uk-inline">
-                                       <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                       <input class="uk-input" type="text" placeholder="Имя пользователя">
-                                    </div>
-                                 </div>
-
-                                 <div class="uk-margin add-user-modal__field">
-                                    <div class="uk-inline">
-                                       <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                                       <input class="uk-input" type="text" placeholder="Пароль">
-                                    </div>
-                                 </div>
-
-                                 <div class="add-user-modal-upload-box uk-flex uk-flex-between">
-                                    <div class="add-user-modal__field add-user-modal__upload">
-                                       <div class="js-upload uk-placeholder uk-text-center">
-                                          <span uk-icon="icon: cloud-upload"></span>
-                                          <div uk-form-custom>
-                                             <input type="file" multiple>
-                                             <span class="uk-link">selecting one</span>
-                                          </div>
-                                       </div>
-
-                                       <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
-                                    </div>
-
-                                    <div class="add-user-modal__upload">
-                                       <button class="default-btn">Take a picture</button>
-                                    </div>
-                                 </div>
-
-                                 <div class="add-user-modal__field uk-flex uk-flex-between">
-                                    <div>
-                                       <label><input class="uk-checkbox" type="checkbox"> Active</label>
-                                    </div>
-                                    <div>
-                                       <label><input class="uk-checkbox" type="checkbox"> Staff status</label>
-                                    </div>
-                                    <div>
-                                       <label><input class="uk-checkbox" type="checkbox"> Superuser</label>
-                                    </div>
-                                 </div>
-                              </div>
-
-                              <p class="uk-text-right">
-                                 <button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
-                                 <button class="uk-button uk-button-primary" type="button">Сохранить</button>
-                              </p>
-                           <form>
                         </div>
                      </div>
                   </div>

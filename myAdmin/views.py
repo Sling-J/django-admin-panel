@@ -5,6 +5,8 @@ from userAPI.admin import UserProfileAdmin
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from turnstile.models import Attendance
+from django.contrib.auth.forms import UserCreationForm
+
 
 @login_required
 def base_admin(request):
@@ -33,4 +35,7 @@ def attendance(request):
   return render(request, 'myAdmin/attendance.html', context)
 # Create your views here.
 
+def register(request):
+  form = UserCreationForm()
+  return render(request, 'myAdmin/register.html', {'form':form})
 # def   

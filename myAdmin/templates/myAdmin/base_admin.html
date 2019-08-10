@@ -27,10 +27,9 @@
          <div class="aside-menu">
             <p class="aside-menu__title">Menu</p>
 
-            <ul class="uk-nav uk-nav-default aside-menu__switcher"
-               uk-switcher="connect: #component-nav; animation: uk-animation-fade">
-               <a href="{% url 'index' %}">Users</a>
-               <a href="{% url 'attendance' %}">Attendance</a>
+            <ul class="uk-nav uk-nav-default aside-menu__switcher">
+               <li><a href="{% url 'index' %}">Users</a></li>
+               <li><a href="{% url 'attendance' %}">Attendance</a></li>
                <li><a href="#">Turnstiles</a></li>
                <li><a href="#">Skip user</a></li>
             </ul>
