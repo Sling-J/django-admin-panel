@@ -71,7 +71,6 @@ html body .content {
 
 .users-panel,
 .users-table__head,
-.users-table__row,
 .main-table__row {
    padding: 10px 40px;
 }
@@ -305,6 +304,7 @@ html body .content {
 }
 
 .users-table__link:hover {
+   color: inherit;
    text-decoration: none;
 }
 
@@ -312,8 +312,13 @@ html body .content {
    cursor: pointer;
 }
 
-.users-table__row:hover {
+.users-table__link:hover {
    background: #e6eaed;
+}
+
+.users-table__head div:first-child,
+.users-table__row div:first-child {
+   width: 2.5%;
 }
 
 .users-table__head div,
@@ -384,7 +389,7 @@ html body .content {
 }
 
 .users-detail-attendance-table__head div,
-.main-table__row div {
+.users-detail-attendance-table__row div {
    width: 32%;
 }
 
