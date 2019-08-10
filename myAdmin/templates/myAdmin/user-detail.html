@@ -54,7 +54,12 @@
             <div class="users-detail-desc-ava">
                <div class="users-details-desc-ava__user">
                   <img src="{% static 'myAdmin/img/Pic.png' %}" alt="User Avatar">
-                  <img class="users-details-desc-ava__main" src="{{ user.avatar.url }}" alt="User Avatar">
+                  {% if user.avatar %}
+                     <img class="users-details-desc-ava__main" src="{{ user.avatar.url }}"  alt="User Avatar">
+                  {% else %}
+                     <img class="users-details-desc-ava__main" src="{% static 'myAdmin/img/empty_user_icon_256.v2.png'%}"  alt="User Avatar">
+                  {% endif %}
+                  
                </div>
 
 
