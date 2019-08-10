@@ -73,8 +73,20 @@ Turnstiles
                               <img src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612" alt="User ava">
                            </div>
                         </div>
-                        <div>{{ user.first_name }}</div>
-                        <div>{{ user.last_name }}</div>
+                        <div>
+                           {% if user.first_name %}
+                              {{ user.first_name }}
+                           {% else %}
+                              Не заполнено
+                           {% endif %}
+                        </div>
+                        <div>
+                           {% if user.first_name %}
+                              {{ user.last_name }}
+                           {% else %}
+                              Не заполнено
+                           {% endif %}
+                        </div>
                         <div>{{ user.email }}</div>
                         <div class="users-table__status-box">
                            {% if user.is_active %}
