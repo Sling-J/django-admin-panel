@@ -1,4 +1,5 @@
 {% extends 'myAdmin/base_admin.html' %}
+{% load static %}
 {% block  title %}
    {{user.username}} - {{ block.super }}
 {% endblock  %}         
@@ -52,8 +53,8 @@
          <div class="users-detail-desc">
             <div class="users-detail-desc-ava">
                <div class="users-details-desc-ava__user">
-                  <img src="./img/Pic.png" alt="User Avatar">
-                  <img class="users-details-desc-ava__main" src="./img/Face.png" alt="User Avatar">
+                  <img src="{% static 'myAdmin/img/Pic.png' %}" alt="User Avatar">
+                  <img class="users-details-desc-ava__main" src="{{ user.avatar.url }}" alt="User Avatar">
                </div>
 
 
