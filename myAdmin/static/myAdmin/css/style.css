@@ -394,16 +394,14 @@ html body .content {
    margin-bottom: 25px;
 }
 
+.users-table__detail-img.uk-dropdown {
+   padding: 0;
+}
+
 .users-table__detail-img {
+   border: 5px solid #fff;
    width: 70px;
    height: 160px;
-   border: 5px solid #333;
-   border-radius: 10px;
-   top: -9999px;
-   transition: opacity 0.4s;
-   opacity: 0;
-   left: 0;
-   z-index: 999;
 }
 
 .users-table__detail-img img {

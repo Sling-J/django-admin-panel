@@ -71,16 +71,30 @@
                                  </label>
                               </div>
                               <div class="users-table__username">
-                                 <span>{{ user.username }}</span>
-                                 {% if user.avatar %}
-                                    <div class="users-table__detail-img">
-                                       <img src="{{ user.avatar.url }}"  alt="User Avatar">
-                                    </div>
+                                 <div class="uk-inline">
+                                    <span>{{ user.username }}</span>
+                                    {% if user.avatar %}
+                                       <div class="users-table__detail-img" uk-dropdown>
+                                          <img src="{{ user.avatar.url }}"  alt="User Avatar">
+                                       </div>
+                                    {% endif %}
+                                 </div>
+                              </div>
+                              <div>{{ user.email }}</div>
+                              <div>
+                                 {% if user.first_name %}
+                                    {{ user.first_name }}
+                                 {% else %}
+                                    Не заполнено
                                  {% endif %}
                               </div>
-                              <div>{{ user.first_name }}</div>
-                              <div>{{ user.last_name }}</div>
-                              <div>{{ user.email }}</div>
+                              <div>
+                                 {% if user.first_name %}
+                                    {{ user.last_name }}
+                                 {% else %}
+                                    Не заполнено
+                                 {% endif %}
+                              </div>
                               <div class="users-table__status-box">
                                  {% if user.is_active %}
                                     <i class="fa fa-check-circle users-status-box__active" aria-hidden="true" uk-tooltip="Active"></i>
