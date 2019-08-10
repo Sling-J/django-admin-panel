@@ -431,11 +431,11 @@ html body .content {
 }
 
 .users-details-desc-ava__main {
-   width: 120px;
+   width: 50%;
    height: 120px;
    border-radius: 50%;
    overflow: hidden;
-   top: 25%;
+   top: 30%;
    left: 26%;
 }
 

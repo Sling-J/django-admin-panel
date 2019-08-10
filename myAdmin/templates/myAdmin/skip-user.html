@@ -5,7 +5,7 @@ Turnstiles
 
 {% block content %}
 <li>
-   <div class="content-wrapper">
+   <div id="skip-user-box" class="content-wrapper">
       <div class="users-panel">
          <form>
             <div class="uk-flex uk-flex-between uk-flex-middle">
@@ -26,7 +26,7 @@ Turnstiles
                <div class="uk-flex uk-flex-middle">
                   <div class="skip-user__field">
                      <label>
-                        <input class="uk-input" type="text" placeholder="Выберите пользователя">
+                        <output class="uk-input skip-user__choose-field"></output>
                      </label>
                   </div>
 
@@ -48,7 +48,7 @@ Turnstiles
       </div>
 
       <div class="users-box">
-         <div id="users-table" class="users-table main-table">
+         <div class="users-table main-table">
             <h2 class="main-wrapper text-title">Skip user</h2>
 
             <form>
@@ -62,13 +62,15 @@ Turnstiles
 
                <div class="users-table__body">
                   {% for user in users %}
-                     <div class="users-table__link main-table__row skip-user__row users-table__row uk-flex uk-flex-between">
-                        <div class="users-table__username">
-                           <span>{{ user.username }}</span>
-
+                     <div 
+                        class="users-table__link main-table__row skip-user__row users-table__row uk-flex uk-flex-between" 
+                        data-id="{{ user.id }}"
+                     >
+                        <div class="users-table__username skip-user-table__username">
+                           <span><a href="{{ user.get_absolute_url }}">{{ user.username }}</a></span>
+                           
                            <div class="users-table__detail-img">
-                              <img src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                 alt="User ava">
+                              <img src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612" alt="User ava">
                            </div>
                         </div>
                         <div>{{ user.first_name }}</div>
