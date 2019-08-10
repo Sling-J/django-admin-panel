@@ -16,5 +16,6 @@ urlpatterns = [
     path('turnstile/', views.turnstile, name='turnstile'),
     path('skip-user/', views.skipUser, name='skip-user'),
     path('attendances/', views.attendance, name='attendance'),
+    path('settings/', views.settings, name='settings'),
     path('user/<str:pk>', views.user_detail, name='user_detail'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

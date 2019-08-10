@@ -85,17 +85,25 @@
                <div class="users-detail-desc-ava__detail">
                   <p>
                      <span>Email</span>
-                     nurel32@gmail.com
+                     {{ user.email }}
                   </p>
 
                   <p>
-                     <span>Mobile</span>
-                     +77757757575
+                     <span>First name</span>
+                     {% if user.first_name %}
+                        {{ user.first_name }}
+                     {% else %}
+                        Не заполнено
+                     {% endif %}
                   </p>
 
                   <p>
-                     <span>In Technodom</span>
-                     6 Month
+                     <span>Last name</span>
+                     {% if user.first_name %}
+                        {{ user.last_name }}
+                     {% else %}
+                        Не заполнено
+                     {% endif %}
                   </p>
                </div>
 

@@ -46,10 +46,12 @@ def turnstile(request):
   return render(request, 'myAdmin/turnstile.html')
 
 def skipUser(request):
-  # skipUser
   users = User.objects.all()
   context={'users': users}
   return render(request, 'myAdmin/skip-user.html', context)
+
+def settings(request):
+  return render(request, 'myAdmin/settings.html')
 
 def register(request):
   form = UserCreationForm()
