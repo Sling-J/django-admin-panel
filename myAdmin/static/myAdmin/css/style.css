@@ -26,7 +26,8 @@ html body .content {
 .aside-menu,
 .users-table__row,
 .attendance-table__row,
-.users-details-desc-ava__user {
+.users-details-desc-ava__user,
+.users-delete-relative {
    position: relative;
 }
 
@@ -34,7 +35,8 @@ html body .content {
 .aside-title,
 .aside-menu__logout,
 .users-table__detail-img,
-.users-details-desc-ava__main {
+.users-details-desc-ava__main,
+.users-panel__remove {
    position: absolute;
 }
 
@@ -81,7 +83,7 @@ html body .content {
    background-color: #ffffff;
 }
 
-.main-wrapper  {
+.main-wrapper {
    margin: 0 40px;
 }
 
@@ -288,6 +290,11 @@ html body .content {
    margin-left: 10px;
 }
 
+.users-panel__remove {
+   top: 115px;
+   right: 290px;
+}
+
 .users-panel__field button {
    padding: 7px 20px;
 }
@@ -319,7 +326,7 @@ html body .content {
 .users-detail-attendance-table {
    padding-top: 10px;
    height: 62vh;
-   overflow-y: scroll;
+   overflow-y: auto;
    margin-bottom: 20px;
 }
 
@@ -352,6 +359,13 @@ html body .content {
 .skip-user__row div:first-child,
 .skip-user__head div:first-child {
    width: 19%;
+}
+
+.attendance-box .users-table__head div:first-child,
+.attendance-table div:first-child,
+.attendance-box .users-table__head div,
+.attendance-table div {
+   width: 32%;
 }
 
 .users-table__status-box i {
@@ -477,6 +491,17 @@ html body .content {
    cursor: default;
 }
 
+.attendance-box,
+.settings-box {
+   padding-top: 10px;
+   margin-bottom: 0;
+   border-radius: 4px;
+   border: 1px solid #e6eaee;
+   background-color: #ffffff;
+   height: 75vh;
+   overflow-y: auto;
+}
+
 .attendance-box {
    width: 67%;
 }
@@ -525,4 +550,46 @@ html body .content {
    padding-top: 13px;
    padding-bottom: 10px;
    margin-left: 5px;
+}
+
+/* Settings */
+
+.settings-box {
+   margin-top: 30px;
+}
+
+.settings-box .text-title {
+   margin-bottom: 30px;
+}
+
+.settings-box label,
+.settings-box input {
+   font-size: 15px;
+}
+
+.setting-box__submit button {
+   padding: 8px 30px;
+}
+
+.settings-box__title,
+.setting-box__submit div {
+   margin-right: 20px;
+}
+
+.setting-box__submit div:last-child {
+   margin-right: 0;
+}
+
+.settings-box__field i {
+   color: #FFB000;
+   vertical-align: middle;
+   font-size: 18px;
+}
+
+.sign-in-input input {
+   font-size: 15px !important;
+}
+
+.sign-in-button {
+   line-height: 40px !important;
 }

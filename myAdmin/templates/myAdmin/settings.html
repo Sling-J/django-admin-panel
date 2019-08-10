@@ -6,8 +6,62 @@ Turnstiles
 {% block content %}
 	<li>
 		<div class="content-wrapper">
-			<div class="users-box">
-            
+			<div class="settings-box">
+				<h2 class="main-wrapper text-title">Settings</h2>
+
+				<div id="settings-box" class="main-wrapper">
+					<form class="uk-form-horizontal uk-margin-large">
+						<div class="settings-box__field uk-margin">
+							<label class="uk-form-label" for="form-horizontal-text" uk-tooltip="title: must be between 0-1; pos: top-left">
+								<i class="fa fa-info-circle" aria-hidden="true"></i>
+								Threshold
+							</label>
+							<div class="uk-form-controls">
+								<input class="settings-box__input uk-input" id="form-horizontal-text" type="text" placeholder="Threshold" value="0.6">
+							</div>
+						</div>
+
+						<div class="settings-box__field uk-margin">
+							<label class="uk-form-label" for="form-horizontal-text" uk-tooltip="title: must be between 0-1; pos: top-left">
+								<i class="fa fa-info-circle" aria-hidden="true"></i>
+								Tolerance
+							</label>
+							<div class="uk-form-controls">
+								<input class="settings-box__input uk-input" id="form-horizontal-text" type="text" placeholder="Tolerance" value="0.6">
+							</div>
+						</div>
+
+						<div class="settings-box__field uk-margin">
+							<label class="uk-form-label" for="form-horizontal-text" uk-tooltip="title: must be at least 1 sec; pos: top-left">
+								<i class="fa fa-info-circle" aria-hidden="true"></i>
+								Seconds
+							</label>
+							<div class="uk-form-controls">
+								<input class="settings-box__input uk-input" id="form-horizontal-text" type="text" placeholder="Seconds" value="10">
+							</div>
+						</div>
+
+						<div class="settings-box__field uk-margin">
+							<label class="uk-form-label" for="form-horizontal-text" uk-tooltip="title: must be at least 1 min; pos: top-left">
+								<i class="fa fa-info-circle" aria-hidden="true"></i>
+								Active time
+							</label>
+							<div class="uk-form-controls">
+								<input class="settings-box__input uk-input" id="form-horizontal-text" type="text" placeholder="Time active" value="10">
+							</div>
+						</div>
+
+						<div class="setting-box__submit uk-flex uk-flex-right uk-flex-middle">
+							<div>
+								<label><input class="uk-radio" type="radio" name="radio2"> True</label>
+								<label><input class="uk-radio" type="radio" name="radio2" checked> False</label>
+							</div>
+							<div>
+								<button class="default-btn">Сохранить</button>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</li>

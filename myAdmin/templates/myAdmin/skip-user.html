@@ -26,6 +26,7 @@ Turnstiles
                <div class="uk-flex uk-flex-middle">
                   <div class="skip-user__field">
                      <label>
+                        <input class="skip-user__choose-field" type="text" hidden>
                         <output class="uk-input skip-user__choose-field"></output>
                      </label>
                   </div>
@@ -63,14 +64,15 @@ Turnstiles
                <div class="users-table__body">
                   {% for user in users %}
                      <div 
-                        class="users-table__link main-table__row skip-user__row users-table__row uk-flex uk-flex-between" 
-                        data-id="{{ user.id }}"
-                     >
+                        class="users-table__link main-table__row skip-user__row users-table__row uk-flex uk-flex-between">
                         <div class="users-table__username skip-user-table__username">
-                           <span><a href="{{ user.get_absolute_url }}">{{ user.username }}</a></span>
-                           
-                           <div class="users-table__detail-img">
-                              <img src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612" alt="User ava">
+                           <div class="uk-inline">
+                                 <span>{{ user.username }}</span>
+                                 {% if user.avatar %}
+                                    <div class="users-table__detail-img" uk-dropdown>
+                                       <img src="{{ user.avatar.url }}"  alt="User Avatar">
+                                    </div>
+                                 {% endif %}
                            </div>
                         </div>
                         <div>{{ user.email }}</div>

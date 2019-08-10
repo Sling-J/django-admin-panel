@@ -6,45 +6,35 @@
 {% block content %}
     <li>
         <div class="content-wrapper uk-flex uk-flex-between">
-            <div class="attendance-box users-box">
-                <h2 class="main-wrapper text-title">Attendances</h2>
+            <div class="attendance-box">
+                <h2 class="main-wrapper text-title">Attendance</h2>
 
                 <div class="users-table main-table">
-                <form>
-                    <div class="users-table__head main-table__head uk-flex uk-flex-between uk-flex-middle">
-                        <div>Username</div>
-                        <div>Turnstiles</div>
-                        <div>Time</div>
-                    </div>
-                    <div class="users-table__body">
-                            <!-- <div class="users-table__username">
-                                    <div class="uk-inline">
-                                       <span>{{ user.username }}</span>
-                                       {% if user.avatar %}
-                                          <div class="users-table__detail-img" uk-dropdown>
-                                             <img src="{{ user.avatar.url }}"  alt="User Avatar">
-                                          </div>
-                                       {% endif %}
+                    <form>
+                        <div class="users-table__head main-table__head uk-flex uk-flex-between uk-flex-middle">
+                            <div>Username</div>
+                            <div>Turnstiles</div>
+                            <div>Time</div>
+                        </div>
+                        <div class="users-table__body">
+                            {% for attendance in attendances %}
+                                <div class="users-table__link attendance-table main-table__row users-table__row uk-flex uk-flex-between">
+                                    <div class="users-table__username">
+                                        <div class="uk-inline">
+                                            <span>{{ user.username }}</span>
+                                            {% if user.avatar %}
+                                                <div class="users-table__detail-img" uk-dropdown>
+                                                    <img src="{{ user.avatar.url }}"  alt="User Avatar">
+                                                </div>
+                                            {% endif %}
+                                        </div>
                                     </div>
-                                 </div> -->
-                        {% for attendance in attendances %}
-                            <div class="users-table__link attendance-table main-table__row users-table__row uk-flex uk-flex-between">
-                                <div class="users-table__username">
-                                    <div class="uk-inline">
-                                        <span>{{ user.username }}</span>
-                                        {% if user.avatar %}
-                                            <div class="users-table__detail-img" uk-dropdown>
-                                                <img src="{{ user.avatar.url }}"  alt="User Avatar">
-                                            </div>
-                                        {% endif %}
-                                    </div>
+                                    <div>{{ attendance.turnstile }}</div>
+                                    <div>{{ attendance.time }}</div>
                                 </div>
-                                <div>{{ attendance.turnstile }}</div>
-                                <div>{{ attendance.time }}</div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </form>
+                            {% endfor %}
+                        </div>
+                    </form>
                 </div>
             </div>
 
