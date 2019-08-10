@@ -30,8 +30,8 @@
             <ul class="uk-nav uk-nav-default aside-menu__switcher">
                <li><a href="{% url 'index' %}">Users</a></li>
                <li><a href="{% url 'attendance' %}">Attendance</a></li>
-               <li><a href="#">Turnstiles</a></li>
-               <li><a href="#">Skip user</a></li>
+               <li><a href="{% url 'turnstile' %}">Turnstiles</a></li>
+               <li><a href="{% url 'skip-user' %}">Skip user</a></li>
             </ul>
 
             <form method="GET" action="{% url 'logout' %}">
@@ -48,7 +48,7 @@
 
                   <div class="content-header__info uk-flex uk-flex-middle">
                      <div class="content-header__img">
-                        <img src="{% static 'myAdmin/img/Face.png'%}" alt="Avatar">
+                        <img src="{% static 'myAdmin/img/empty_user_icon_256.v2.png'%}" alt="Avatar">
                         <div class="content-header__img__overlay"></div>
                      </div>
 

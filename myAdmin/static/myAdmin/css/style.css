@@ -191,15 +191,19 @@ html body .content {
    border: none;
    outline: none;
    color: #fff;
-   cursor: pointer;
    transition: all 0.3s;
 }
 
-.default-btn:hover {
+.default-btn:disabled {
+   opacity: 0.5;
+}
+
+.default-btn:enabled:hover {
+   cursor: pointer;
    background: #137dcf;
 }
 
-.default-btn:active {
+.default-btn:enabled:active {
    background: #006cbf;
 }
 
@@ -344,7 +348,9 @@ html body .content {
 }
 
 .users-table__head div,
-.users-table__row div {
+.users-table__row div,
+.skip-user__row div:first-child,
+.skip-user__head div:first-child {
    width: 19%;
 }
 
@@ -499,4 +505,26 @@ html body .content {
 
 .turnstile-status__disable {
    color: tomato;
+}
+
+/* Skip user */
+
+.skip-user__field {
+   margin-left: 20px;
+}
+
+.skip-user__field .uk-input {
+   font-size: 14px;
+   width: 190px;
+}
+
+.skip-user__field select {
+   font-size: 14px;
+   width: 130px;
+}
+
+.skip-user__field button {
+   padding-top: 13px;
+   padding-bottom: 10px;
+   margin-left: 5px;
 }

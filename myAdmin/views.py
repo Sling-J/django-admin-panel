@@ -35,6 +35,16 @@ def attendance(request):
   return render(request, 'myAdmin/attendance.html', context)
 # Create your views here.
 
+def turnstile(request):
+  # turnstiles = 
+  return render(request, 'myAdmin/turnstile.html')
+
+def skipUser(request):
+  # skipUser
+  users = User.objects.all()
+  context={'users': users}
+  return render(request, 'myAdmin/skip-user.html', context)
+
 def register(request):
   form = UserCreationForm()
   return render(request, 'myAdmin/register.html', {'form':form})

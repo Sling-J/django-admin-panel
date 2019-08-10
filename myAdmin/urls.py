@@ -10,6 +10,7 @@ from myAdmin import views
 urlpatterns = [
     path('', views.base_admin, name='base_admin'),
     path('users/', views.index, name='index'),
-    path('users/register', views.register, name='register'),
+    path('turnstile/', views.turnstile, name='turnstile'),
+    path('skip-user/', views.skipUser, name='skip-user'),
     path('attendances/', views.attendance, name='attendance'),
 ]
