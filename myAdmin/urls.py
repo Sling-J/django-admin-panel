@@ -13,5 +13,5 @@ urlpatterns = [
     path('turnstile/', views.turnstile, name='turnstile'),
     path('skip-user/', views.skipUser, name='skip-user'),
     path('attendances/', views.attendance, name='attendance'),
-    path('user/<str:id>', views.user_detail, name='user_detail'),
+    path('user/<str:pk>', views.user_detail, name='user_detail'),
 ]

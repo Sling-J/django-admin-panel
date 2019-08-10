@@ -62,7 +62,7 @@
 
                   <div class="users-table__body">
                      {% for user in users %}
-                        <a class="users-table__link main-table__row" href="{% url 'user_detail' %}">
+                        <a class="users-table__link main-table__row" href="{{ user.get_absolute_url }}">
                            <div class="users-table__row uk-flex uk-flex-between">
                               <div>
                                  <label>
