@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="./css/font-awesome.min.css">
+   <link rel="stylesheet" href="./css/uikit.min.css">
+   <script src="./js/uikit.min.js"></script>
+   <script src="./js/uikit-icons.min.js"></script>
+   <title>Admin</title>
+</head>
+<body>
+   <div uk-grid>
+      <aside class="aside-panel uk-flex">
+         <div class="aside-container">
+            <p class="aside-title">Technodom</p>
+         </div>
+
+         <div class="aside-menu">
+            <p class="aside-menu__title">Menu</p>
+
+            <ul class="uk-nav uk-nav-default aside-menu__switcher" uk-switcher="connect: #component-nav; animation: uk-animation-fade">
+               <li><a href="#">Users</a></li>
+               <li><a href="#">Attendance</a></li>
+               <li><a href="#">Turnstiles</a></li>
+               <li><a href="#">Skip user</a></li>
+            </ul>
+
+            <button class="aside-menu__logout default-btn">Logout</button>
+         </div>
+      </aside>
+
+      <div class="uk-width-expand content">
+         <div class="content-header">
+            <div class="content-header-wrapper uk-flex uk-flex-between uk-flex-middle">
+               <h1 class="content-header__title">Myrzagassimov Nurel</h1>
+
+               <div class="content-header__info uk-flex uk-flex-middle">
+                  <div class="content-header__img">
+                     <img src="./img/Face.png" alt="Avatar">
+                     <div class="content-header__img__overlay"></div>
+                  </div>
+
+                  <p class="content-header__status">Administrator</p>
+               </div>
+            </div>
+         </div>
+
+         <ul id="component-nav" class="uk-switcher">
+            <li>
+               <div class="content-wrapper uk-flex uk-flex-between">
+                  <div class="users-detail-box">
+                     <div class="users-detail-box_k_info">
+                        <div class="users-detail-attendance">
+                           <div class="to-back">
+                              <a class="uk-inline" href="index.html">
+                                 <span class="uk-form-icon" uk-icon="icon: chevron-left"></span>
+                                 Back
+                              </a>
+                           </div>
+
+                           <div class="users-detail-attendance__header uk-flex uk-flex-between uk-flex-middle">
+                              <h2 class="users-detail-attendance__title text-title">Attendance</h2>
+
+                              <ul class="users-detail-attendance__filter uk-subnav uk-subnav-pill">
+                                 <li class="uk-active">All</li>
+                                 <li>Day</li>
+                                 <li>Week</li>
+                                 <li>Month</li>
+                              </ul>
+                           </div>
+
+                           <div class="users-detail-attendance-table main-table">
+                              <div class="users-detail-attendance-table__head main-table__head uk-flex uk-flex-between uk-flex-middle">
+                                 <div>Username</div>
+                                 <div>Turnstiles</div>
+                                 <div>Time</div>
+                              </div>
+                              
+                              <ul class="users-detail-attendance-table__body">
+                                 <li class="users-detail-attendance-table__row main-table__row uk-flex uk-flex-between">
+                                    <div>Nurel</div>
+                                    <div>Turnstiles 1</div>
+                                    <div>10:32</div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="users-detail-desc">
+                     <div class="users-detail-desc-ava">
+                        <div class="users-details-desc-ava__user">
+                           <img src="./img/Pic.png" alt="User Avatar">
+                           <img class="users-details-desc-ava__main" src="./img/Face.png" alt="User Avatar">
+                        </div>
+
+
+                        <div class="users-detail-desc-ava__info">
+                           <h2 class="users-detail-desc-ava__title text-title">Myrzagassimov Nurel</h2>
+                           <p class="users-detail-desc-ava__desc">Frontend Developer | 2 year</p>
+                        </div>
+
+                        <div>
+                           <div class="add-user-modal__field uk-flex uk-flex-between">
+                              <div>
+                                 <label><input class="uk-checkbox" type="checkbox"> Active</label>
+                              </div>
+                              <div>
+                                 <label><input class="uk-checkbox" type="checkbox"> Staff status</label>
+                              </div>
+                              <div>
+                                 <label><input class="uk-checkbox" type="checkbox"> Superuser</label>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="users-detail-desc-ava__detail">
+                           <p>
+                              <span>Email</span>
+                              nurel32@gmail.com
+                           </p>
+
+                           <p>
+                              <span>Mobile</span>
+                              +77757757575
+                           </p>
+
+                           <p>
+                              <span>In Technodom</span>
+                              6 Month
+                           </p>
+                        </div>
+
+                        <div class="users-detail-desc-ava__save">
+                           <button class="default-btn">Сохранить</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </li>
+
+            <li>
+               <div class="content-wrapper uk-flex uk-flex-between">
+                  <div class="attendance-box users-box">
+                     <h2 class="main-wrapper text-title">Attendance</h2>
+
+                     <div id="users-table" class="users-table main-table">
+                        <form>
+                           <div class="users-table__head main-table__head uk-flex uk-flex-between uk-flex-middle">
+                              <div>{Username}</div>
+                              <div>Turnstiles</div>
+                              <div>Time</div>
+                           </div>
+
+                           <div class="users-table__body">
+                              <div class="users-table__link attendance-table main-table__row users-table__row uk-flex uk-flex-between">
+                                 <div class="users-table__username">
+                                    <span><a href="user-detail.html">Nurel</a></span>
+
+                                    <div class="users-table__detail-img">
+                                       <img
+                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
+                                          alt="User ava">
+                                    </div>
+                                 </div>
+                                 <div>Turnstile 1</div>
+                                 <div>17:45</div>
+                              </div>
+
+                              <div class="users-table__link attendance-table main-table__row users-table__row uk-flex uk-flex-between">
+                                 <div class="users-table__username">
+                                    <span><a href="user-detail.html">Nurel</a></span>
+
+                                    <div class="users-table__detail-img">
+                                       <img
+                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
+                                          alt="User ava">
+                                    </div>
+                                 </div>
+                                 <div>Turnstile 1</div>
+                                 <div>17:45</div>
+                              </div>
+
+                              <div class="users-table__link attendance-table main-table__row users-table__row uk-flex uk-flex-between">
+                                 <div class="users-table__username">
+                                    <span><a href="user-detail.html">Nurel</a></span>
+
+                                    <div class="users-table__detail-img">
+                                       <img
+                                          src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
+                                          alt="User ava">
+                                    </div>
+                                 </div>
+                                 <div>Turnstile 1</div>
+                                 <div>17:45</div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+
+                  <div class="attendance-table__search">
+                     <form>
+                        <div>
+                           <h2 class="text-title">Filter by</h2>
+
+                           <ul class="attendance-panel__field users-detail-attendance__filter uk-flex uk-flex-between uk-flex-middle">
+                              <li>All</li>
+                              <li>Day</li>
+                              <li>Week</li>
+                              <li>Month</li>
+                           </ul>
+                        </div>
+                     </form>
+                  </div>
+
+               </div>
+            </li>
+
+            <li>
+               <div class="content-wrapper">
+                  <div class="users-box">
+                     <h2 class="main-wrapper text-title">Turnstiles</h2>
+
+                     <div id="users-table" class="users-table main-table">
+                        <form>
+                           <div class="turnstile-head uk-flex uk-flex-between uk-flex-middle">
+                              <div>Turnstiles</div>
+                              <div>Status</div>
+                           </div>
+
+                           <div class="users-table__body">
+                              <div class="main-table__row turnstile-row uk-flex uk-flex-between">
+                                 <div>Turnstile 1</div>
+                                 <div class="turnstile-row__status">
+                                    <i class="fa fa-check-circle turnstile-status__active" aria-hidden="true"></i>
+                                    <i class="fa fa-times turnstile-status__disable" aria-hidden="true"></i>
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </li>
+         </ul>
+      </div>
+   </div>
+</body>
+</html>

@@ -35,6 +35,10 @@ def attendance(request):
   return render(request, 'myAdmin/attendance.html', context)
 # Create your views here.
 
+def user_detail(request, id):
+  user = User.objects.get(id__iexact=id)
+  return render(request, 'myAdmin/user-detail.html', context={'user':user})
+
 def register(request):
   form = UserCreationForm()
   return render(request, 'myAdmin/register.html', {'form':form})
