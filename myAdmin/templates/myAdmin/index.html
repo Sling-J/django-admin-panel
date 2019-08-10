@@ -1,4 +1,5 @@
 {% extends 'myAdmin/base_admin.html' %}
+{% load static %}
 {% block title %}
    Users
 {% endblock %}
@@ -71,12 +72,11 @@
                               </div>
                               <div class="users-table__username">
                                  <span>{{ user.username }}</span>
-
-                                 <div class="users-table__detail-img">
-                                    <img
-                                       src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
-                                       alt="User ava">
-                                 </div>
+                                 {% if user.avatar %}
+                                    <div class="users-table__detail-img">
+                                       <img src="{{ user.avatar.url }}"  alt="User Avatar">
+                                    </div>
+                                 {% endif %}
                               </div>
                               <div>{{ user.first_name }}</div>
                               <div>{{ user.last_name }}</div>

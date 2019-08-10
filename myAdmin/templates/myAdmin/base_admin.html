@@ -48,7 +48,14 @@
 
                   <div class="content-header__info uk-flex uk-flex-middle">
                      <div class="content-header__img">
-                        <img src="{% static 'myAdmin/img/empty_user_icon_256.v2.png'%}" alt="Avatar">
+
+                        {% if user.avatar %}
+                           <img src="{{ user.avatar.url }}" alt="Avatar">
+                        {% else %}
+                           <img src="{% static 'myAdmin/img/empty_user_icon_256.v2.png'%}"  alt="Avatar">
+                        {% endif %}
+
+                        
                         <div class="content-header__img__overlay"></div>
                      </div>
 
