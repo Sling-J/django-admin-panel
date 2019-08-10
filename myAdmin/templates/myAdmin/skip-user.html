@@ -1,0 +1,106 @@
+{% extends 'myAdmin/base_admin.html' %}
+{% block title %}
+Turnstiles
+{% endblock %}
+
+{% block content %}
+<li>
+   <div class="content-wrapper">
+      <div class="users-panel">
+         <form>
+            <div class="uk-flex uk-flex-between uk-flex-middle">
+               <form method="GET" action=''>
+                  <div class="uk-flex uk-flex-bottom">
+                     <div class="users-panel__field">
+                        <label>
+                           <input type="text" name='q' placeholder="Поиск ..." value='{{ request.GET.q }}'>
+                        </label>
+                     </div>
+
+                     <div class="users-panel__field">
+                        <button class="default-btn">Поиск</button>
+                     </div>
+                  </div>
+               </form>
+
+               <div class="uk-flex uk-flex-middle">
+                  <div class="skip-user__field">
+                     <label>
+                        <input class="uk-input" type="text" placeholder="Выберите пользователя">
+                     </label>
+                  </div>
+
+                  <div class="skip-user__field users-panel__field">
+                     <select class="uk-select" name="">
+                        <option value="turnstiles1">turnstiles1</option>
+                        <option value="turnstiles2">turnstiles2</option>
+                        <option value="turnstiles3">turnstiles3</option>
+                        <option value="turnstiles4">turnstiles4</option>
+                     </select>
+                  </div>
+
+                  <div class="users-panel__field skip-user__field">
+                     <button class="default-btn" disabled>Пропустить пользователя</button>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+
+      <div class="users-box">
+         <div id="users-table" class="users-table main-table">
+            <h2 class="main-wrapper text-title">Skip user</h2>
+
+            <form>
+               <div class="skip-user__head users-table__head main-table__head uk-flex uk-flex-between uk-flex-middle">
+                  <div>Username</div>
+                  <div>First name</div>
+                  <div>Last name</div>
+                  <div>Email</div>
+                  <div>Permission</div>
+               </div>
+
+               <div class="users-table__body">
+                  {% for user in users %}
+                     <div class="users-table__link main-table__row skip-user__row users-table__row uk-flex uk-flex-between">
+                        <div class="users-table__username">
+                           <span>{{ user.username }}</span>
+
+                           <div class="users-table__detail-img">
+                              <img src="https://media.gettyimages.com/photos/grim-reaper-picture-id827848238?s=612x612"
+                                 alt="User ava">
+                           </div>
+                        </div>
+                        <div>{{ user.first_name }}</div>
+                        <div>{{ user.last_name }}</div>
+                        <div>{{ user.email }}</div>
+                        <div class="users-table__status-box">
+                           {% if user.is_active %}
+                           <i class="fa fa-check-circle users-status-box__active" aria-hidden="true"
+                              uk-tooltip="Active"></i>
+                           {% else %}
+                           <i class="fa fa-check-circle " aria-hidden="true" uk-tooltip="Active"></i>
+                           {% endif %}
+
+                           {% if user.is_staff %}
+                           <i class="fa fa-user users-status-box__active" aria-hidden="true" uk-tooltip="Staff"></i>
+                           {% else %}
+                           <i class="fa fa-user" aria-hidden="true" uk-tooltip="Staff"></i>
+                           {% endif %}
+
+                           {% if user.is_superuser %}
+                           <i class="fa fa-user-secret users-status-box__active" aria-hidden="true"
+                              uk-tooltip="Superuser"></i>
+                           {% else %}
+                           <i class="fa fa-user-secret " aria-hidden="true" uk-tooltip="Superuser"></i>
+                           {% endif %}
+                        </div>
+                     </div>
+                  {% endfor %}
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</li>
+{% endblock %}

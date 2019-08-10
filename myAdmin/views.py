@@ -39,6 +39,16 @@ def user_detail(request, id):
   user = User.objects.get(id__iexact=id)
   return render(request, 'myAdmin/user-detail.html', context={'user':user})
 
+def turnstile(request):
+  # turnstiles = 
+  return render(request, 'myAdmin/turnstile.html')
+
+def skipUser(request):
+  # skipUser
+  users = User.objects.all()
+  context={'users': users}
+  return render(request, 'myAdmin/skip-user.html', context)
+
 def register(request):
   form = UserCreationForm()
   return render(request, 'myAdmin/register.html', {'form':form})

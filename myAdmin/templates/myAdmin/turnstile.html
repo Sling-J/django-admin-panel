@@ -1,8 +1,45 @@
 {% extends 'myAdmin/base_admin.html' %}
 {% block title %}
-   Turnstiles
+Turnstiles
 {% endblock %}
 
 {% block content %}
-    Turnstiles
+	<li>
+		<div class="content-wrapper">
+			<div class="users-panel">
+				<div class="users-panel-box uk-flex uk-flex-between">
+					<h2 class="text-title">Turnstiles</h2>
+						
+					<div class="turnstile-head-panel users-panel__field">
+						<button class="default-btn" type="button" uk-toggle="target: #modal-example">Добавить турникет</button>
+
+						<div id="modal-example" class="add-user-modal" uk-modal>
+							<div class="uk-modal-dialog uk-modal-body">
+								{% include 'myAdmin/turnstiles-register.html' %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="users-box">
+				<div id="users-table" class="users-table main-table">
+					<div class="turnstile-head uk-flex uk-flex-between uk-flex-middle">
+						<div>Turnstiles</div>
+						<div>Status</div>
+					</div>
+
+					<div class="users-table__body">
+						<div class="main-table__row turnstile-row uk-flex uk-flex-between">
+							<div>Turnstile 1</div>
+							<div class="turnstile-row__status">
+								<i class="fa fa-check-circle turnstile-status__active" aria-hidden="true"></i>
+								<i class="fa fa-times turnstile-status__disable" aria-hidden="true"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
 {% endblock %}
