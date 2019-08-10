@@ -1,0 +1,37 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="{% static "myAdmin/css/uikit.min.css" %}">
+   <script src="{% static "myAdmin/js/uikit.min.js"%}"></script>
+   <script src="{% static "myAdmin/js/uikit-icons.min.js"%}"></script>
+   <title>Admin</title>
+</head>
+<body>
+   <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+      <div class="uk-width-1-1">
+         <div class="uk-container">
+            <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+               <div class="uk-width-1-1@m">
+                  <div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+                     <h3 class="uk-card-title uk-text-center">You have been logged out</h3>
+
+                     <form method="POST" class="sign-in-form" action=''>
+                        
+                        <div class="uk-margin">
+                           <a href="{% url 'login' %}">Login again</a>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,502 @@
+html {
+   background: #eff3f6 !important;
+}
+
+body {
+   margin: 0;
+}
+
+html body p,
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6,
+html body ul,
+html body ol,
+html body .content {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+.content-header__img,
+.aside-container,
+.aside-menu,
+.users-table__row,
+.attendance-table__row,
+.users-details-desc-ava__user {
+   position: relative;
+}
+
+.content-header__img__overlay,
+.aside-title,
+.aside-menu__logout,
+.users-table__detail-img,
+.users-details-desc-ava__main {
+   position: absolute;
+}
+
+.text-title {
+   font-size: 24px;
+   color: #354052;
+}
+
+.main-table__head {
+   margin-bottom: 7px;
+}
+
+.main-table__row {
+   color: #333c48;
+   transition: all 0.3s;
+   border-bottom: 1px solid #e7e9ed;
+}
+
+.main-table__row:nth-child(even) {
+   background: #f5f8fa;
+}
+
+.main-table__row:last-child {
+   border-bottom: none;
+}
+
+.main-table__head div {
+   color: #7f8fa4;
+}
+
+.users-panel,
+.users-table__head,
+.main-table__row,
+.turnstile-head {
+   padding: 10px 40px;
+}
+
+.users-panel,
+.users-box,
+.users-detail-desc-ava,
+.users-detail-attendance {
+   border-radius: 4px;
+   border: 1px solid #e6eaee;
+   background-color: #ffffff;
+}
+
+.main-wrapper  {
+   margin: 0 40px;
+}
+
+/* Styles */
+
+.add-user-modal-upload-box {
+   margin-bottom: 20px;
+}
+
+.add-user-modal__upload button {
+   width: 100%;
+   height: 100%;
+   display: block;
+}
+
+.add-user-modal__upload,
+.turnstile-row div,
+.turnstile-head div {
+   width: 49%;
+}
+
+.add-user-modal__upload .uk-placeholder {
+   margin: 0;
+   padding: 10px;
+}
+
+.add-user-modal__content {
+   width: 70%;
+   margin: 30px auto;
+}
+
+.add-user-modal__field .uk-inline {
+   width: 100%;
+   font-size: 14px;
+}
+
+.add-user-modal .uk-modal-body h2 {
+   text-align: center;
+   font-size: 23px;
+   color: #354052;
+}
+
+.content {
+   margin-left: 17.5% !important;
+}
+
+.aside-panel {
+   height: 100vh;
+   width: 15%;
+   position: fixed;
+}
+
+.aside-container {
+   background-color: #1d2531;
+   width: 30%;
+}
+
+.aside-title {
+   transform: rotate(-90deg);
+   left: -33px;
+   top: 78px;
+   font-size: 25px;
+}
+
+.aside-menu {
+   background-color: #222c3c;
+   width: 100%;
+   padding-top: 30px;
+}
+
+.aside-menu__title {
+   font-size: 16px;
+   color: #5b6779;
+   text-transform: uppercase;
+   margin-bottom: 30px;
+   margin-left: 20px;
+}
+
+.aside-menu .aside-menu__switcher li a {
+   padding: 13px 20px;
+   display: block;
+   color: #fff
+}
+
+.aside-menu .aside-menu__switcher .uk-active a {
+   color: #fff;
+   background: #313d4f;
+}
+
+.aside-menu .aside-menu__switcher li a:hover {
+   color: #fff;
+   background: #313d4f;
+}
+
+.to-back {
+   cursor: pointer;
+   padding: 9px 30px;
+}
+
+.to-back a span {
+   left: -30px;
+   top: 2px;
+}
+
+.default-btn {
+   background: #259af3;
+   border: none;
+   outline: none;
+   color: #fff;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+.default-btn:hover {
+   background: #137dcf;
+}
+
+.default-btn:active {
+   background: #006cbf;
+}
+
+.aside-menu__logout {
+   width: 90%;
+   display: block;
+   padding: 10px 0;
+   bottom: 20px;
+   left: 5%;
+}
+
+.users-detail-desc-ava___real {
+   display: block;
+   width: 100%;
+}
+
+.content-header {
+   padding: 10px 0;
+   margin-bottom: 30px;
+   background: #fff;
+   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.content-header-wrapper {
+   max-width: 97%;
+   margin: 0 auto;
+}
+
+.content-header__title {
+   font-size: 24px;
+}
+
+.content-header__img {
+   margin-right: 20px;
+   width: 75px;
+   height: 50px;
+}
+
+.content-header__img img {
+   border-radius: 50%;
+   overflow: hidden;
+   width: 100%;
+   height: 100%;
+}
+
+.content-header__status {
+   width: 100%;
+}
+
+.content-header__img__overlay {
+   width: 14px;
+   height: 14px;
+   border: 3px solid #fff;
+   background: #38a76a;
+   border-radius: 50%;
+   top: 33px;
+   right: 0;
+}
+
+.content-wrapper {
+   width: 93%;
+   margin: 0 auto;
+}
+
+.users-panel__field input {
+   padding: 10px 15px 10px 0;
+   width: 170px;
+   border: none;
+   outline: none;
+   border-bottom: 1px solid #d0d3d9;
+}
+
+.users-panel-box {
+   flex-wrap: wrap;
+}
+
+.users-panel-box div:first-child {
+   margin-left: 0;
+}
+
+.users-panel-box div {
+   margin-left: 10px;
+}
+
+.users-panel__field button {
+   padding: 7px 20px;
+}
+
+.users-panel__remove button {
+   border: none;
+   outline: none;
+   transition: all 0.3s;
+   cursor: pointer;
+   background: tomato;
+   color: #fff;
+   padding: 7px 12px;
+}
+
+.users-panel__remove button:hover {
+   background: #e85238;
+}
+
+.users-panel__remove button:active {
+   background: #c9452e;
+}
+
+.users-panel,
+.users-detail-desc-ava {
+   margin-bottom: 30px;
+}
+
+.users-box,
+.users-detail-attendance-table {
+   padding-top: 10px;
+   height: 62vh;
+   overflow-y: scroll;
+   margin-bottom: 20px;
+}
+
+.users-table__link {
+   display: block;
+   color: inherit;
+   text-decoration: none;
+}
+
+.users-table__link:hover {
+   color: inherit;
+   text-decoration: none;
+}
+
+.users-table__row {
+   cursor: pointer;
+}
+
+.users-table__link:hover {
+   background: #e6eaed;
+}
+
+.users-table__head div:first-child,
+.users-table__row div:first-child {
+   width: 2.5%;
+}
+
+.users-table__head div,
+.users-table__row div {
+   width: 19%;
+}
+
+.users-table__status-box i {
+   font-size: 21px;
+   display: inline-block;
+   margin-right: 10px;
+   cursor: pointer;
+}
+
+.users-status-box__active,
+.turnstile-status__active {
+   color: #1bb934;
+}
+
+.users-table__username span {
+   color: #269AF3;
+}
+
+.users-table__username span:hover {
+   text-decoration: underline;
+}
+
+.users-table__username span:hover + .users-table__detail-img {
+   opacity: 1;
+   top: 50px;
+}
+
+/* User detail */
+
+.users-detail-attendance__filter li {
+   cursor: pointer;
+}
+
+.users-detail-box {
+   width: 68%;
+}
+
+.users-detail-desc {
+   width: 28%;
+   margin-bottom: 25px;
+}
+
+.users-table__detail-img {
+   width: 70px;
+   height: 160px;
+   border: 5px solid #333;
+   border-radius: 10px;
+   top: -9999px;
+   transition: opacity 0.4s;
+   opacity: 0;
+   left: 0;
+   z-index: 999;
+}
+
+.users-table__detail-img img {
+   width: 100%;
+   height: 100%;
+}
+
+.users-detail-attendance__header {
+   padding: 0 40px;
+   margin-top: 10px;
+   margin-bottom: 30px;
+}
+
+.users-detail-attendance-table__head div,
+.users-detail-attendance-table__row div {
+   width: 32%;
+}
+
+.users-detail-attendance-table__head {
+   padding: 0 40px;
+}
+
+.users-detail-desc-ava {
+   padding: 10px;
+}
+
+.users-details-desc-ava__main {
+   width: 120px;
+   height: 120px;
+   border-radius: 50%;
+   overflow: hidden;
+   top: 25%;
+   left: 26%;
+}
+
+.users-detail-desc-ava__info {
+   margin-top: 60px;
+   text-align: center;
+   padding-bottom: 20px;
+   margin-bottom: 20px;
+   border-bottom: 3px solid rgba(222,231,239, 0.3);
+}
+
+.users-detail-desc-ava__desc {
+   font-size: 15px;
+   color: #b5b5b5;
+   margin-top: 3px;
+}
+
+.users-detail-desc-ava__save button {
+   padding: 7px 0;
+   width: 100%;
+}
+
+.users-detail-desc-ava__detail {
+   margin-top: 25px;
+}
+
+.users-detail-desc-ava__detail p {
+   font-size: 16px;
+   color: #56688a;
+   margin-bottom: 17px;
+}
+
+.users-detail-desc-ava__detail p span {
+   font-size: 12px;
+   color: #818ea7;
+   display: block;
+   line-height: 10px;
+}
+
+.attendance-table {
+   cursor: default;
+}
+
+.attendance-box {
+   width: 67%;
+}
+
+.attendance-table__search {
+   width: 25%;
+   background: #fff;
+   padding: 10px 20px;
+}
+
+.attendance-panel__field {
+   margin: 20px 0;
+   padding-bottom: 15px;
+   border-bottom: 1px solid #D0D3D9;
+}
+
+.turnstile-row__status {
+   font-size: 20px;
+}
+
+.turnstile-row__status i {
+   margin-right: 5px;
+}
+
+.turnstile-status__disable {
+   color: tomato;
+}
