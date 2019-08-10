@@ -25,6 +25,7 @@ html body .content {
 .aside-container,
 .aside-menu,
 .users-table__row,
+.attendance-table__row,
 .users-details-desc-ava__user {
    position: relative;
 }
@@ -44,11 +45,6 @@ html body .content {
 
 .main-table__head {
    margin-bottom: 7px;
-}
-
-.main-table__head div:first-child {
-   font-size: 20px;
-   color: #354052;
 }
 
 .main-table__row {
@@ -71,7 +67,8 @@ html body .content {
 
 .users-panel,
 .users-table__head,
-.main-table__row {
+.main-table__row,
+.turnstile-head {
    padding: 10px 40px;
 }
 
@@ -84,7 +81,32 @@ html body .content {
    background-color: #ffffff;
 }
 
+.main-wrapper  {
+   margin: 0 40px;
+}
+
 /* Styles */
+
+.add-user-modal-upload-box {
+   margin-bottom: 20px;
+}
+
+.add-user-modal__upload button {
+   width: 100%;
+   height: 100%;
+   display: block;
+}
+
+.add-user-modal__upload,
+.turnstile-row div,
+.turnstile-head div {
+   width: 49%;
+}
+
+.add-user-modal__upload .uk-placeholder {
+   margin: 0;
+   padding: 10px;
+}
 
 .add-user-modal__content {
    width: 70%;
@@ -263,7 +285,7 @@ html body .content {
 }
 
 .users-panel__field button {
-   padding: 7px 50px;
+   padding: 7px 20px;
 }
 
 .users-panel__remove button {
@@ -333,7 +355,8 @@ html body .content {
    cursor: pointer;
 }
 
-.users-table__status-box .users-table__status-box-active {
+.users-table__status-box .users-table__status-box-active,
+.turnstile-status__active {
    color: #1bb934;
 }
 
@@ -444,4 +467,36 @@ html body .content {
    color: #818ea7;
    display: block;
    line-height: 10px;
+}
+
+.attendance-table {
+   cursor: default;
+}
+
+.attendance-box {
+   width: 67%;
+}
+
+.attendance-table__search {
+   width: 25%;
+   background: #fff;
+   padding: 10px 20px;
+}
+
+.attendance-panel__field {
+   margin: 20px 0;
+   padding-bottom: 15px;
+   border-bottom: 1px solid #D0D3D9;
+}
+
+.turnstile-row__status {
+   font-size: 20px;
+}
+
+.turnstile-row__status i {
+   margin-right: 5px;
+}
+
+.turnstile-status__disable {
+   color: tomato;
 }
