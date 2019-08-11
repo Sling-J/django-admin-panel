@@ -7,7 +7,8 @@ Turnstiles
 <li>
    <div id="skip-user-box" class="content-wrapper">
       <div class="users-panel">
-         <form>
+         <form method="POST">
+         {% csrf_token %}
             <div class="uk-flex uk-flex-between uk-flex-middle">
                <form method="GET" action=''>
                   <div class="uk-flex uk-flex-bottom">
@@ -26,17 +27,16 @@ Turnstiles
                <div class="uk-flex uk-flex-middle">
                   <div class="skip-user__field">
                      <label>
-                        <input class="skip-user__choose-field" type="text" hidden>
+                        <input class="skip-user__choose-field" type="text" hidden name='user'>
                         <output class="uk-input skip-user__choose-field"></output>
                      </label>
                   </div>
 
                   <div class="skip-user__field users-panel__field">
-                     <select class="uk-select" name="">
-                        <option value="turnstiles1">turnstiles1</option>
-                        <option value="turnstiles2">turnstiles2</option>
-                        <option value="turnstiles3">turnstiles3</option>
-                        <option value="turnstiles4">turnstiles4</option>
+                     <select class="uk-select" name="kek" multiple="multiple">
+                        {% for turnstile in turnstiles %}
+                           <option value="{{ turnstile.name }}" name="qwe">{{ turnstile.name }}</option>
+                        {% endfor %}
                      </select>
                   </div>
 

@@ -14,7 +14,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='myAdmin/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='myAdmin/logout.html'), name='logout'),
     path('admin/', include('myAdmin.urls'), name='admin'),
-    # path('face/', include(('faceRec.urls')))
+    path('face/', include(('faceRec.urls')))
     # path('^api-auth/', include('rest_framework.urls'))
 
 ]

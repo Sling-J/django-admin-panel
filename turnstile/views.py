@@ -1,5 +1,5 @@
 from django.shortcuts import render
-# from faceRec.views import faceRecog
+from faceRec.views import faceRecog
 from rest_framework.generics import (
     CreateAPIView,
     ListAPIView
@@ -19,7 +19,7 @@ class AttendanceCreateAPIView(CreateAPIView):
     def perform_create(self, serializer_class):
         serializer_class.save()
         print(serializer_class.data)
-        # sfaceRecog(self, serializer_class.data['user'], serializer_class.data['turnstile'])
+        faceRecog(self, serializer_class.data['user'], serializer_class.data['turnstile'])
 
 class AttendanceListAPIView(ListAPIView):
     queryset = Attendance.objects.all()

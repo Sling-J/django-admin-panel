@@ -13,6 +13,8 @@ sys.path.append('./facerec/faceboxes')
 sys.path.append('./facerec/antispoofing')
 from face_detector import FaceDetector
 import antispoofing
+from django.http import HttpResponse
+
 # import os
 
 import warnings
@@ -70,7 +72,7 @@ def videoShow(frame, face_locations, closest_id):
 
 def faceRecog(self, username, turnstile):
     # Маркер для визуального отображения камеры и времени
-    build = False
+    build = True
     global seconds, answer
     answer = False
     seconds = 7
@@ -142,7 +144,17 @@ def faceRecog(self, username, turnstile):
                     # break
                     
         process_this_frame = not process_this_frame
-    return answer
+    
+    
+    
 
     cap.release()
     cv2.destroyAllWindows()
+
+def show_result(request):
+    global answer
+    if answer is True:
+        html = "<html><h1>ACCESS IS APPROVED</h1></html>"
+    else:
+        html = "<html><h1>ACCESS IS DENIED</h1></html>"
+    return HttpResponse(html)

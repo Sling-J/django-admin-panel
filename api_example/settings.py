@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'userAPI',
     'turnstile',
     'myAdmin',
-    # 'faceRec',
+    'faceRec',
     'crispy_forms'
 ]
 

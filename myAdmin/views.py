@@ -4,9 +4,9 @@ from userAPI.models import UserProfile as User
 from userAPI.admin import UserProfileAdmin
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
-from turnstile.models import Attendance
+from turnstile.models import Attendance, Turnstile
 from django.contrib.auth.forms import UserCreationForm
-
+import requests
 
 @login_required
 def base_admin(request):
@@ -24,6 +24,15 @@ def index(request):
       Q(last_name__icontains=user)|
       Q(email__icontains=user)
     ).distinct()
+  if request.method == 'POST':
+    username = request.POST['usermane']
+    password = request.POST['pass']
+    data = {
+      'username' : username,
+      'password': password,
+    }
+    r = requests.post('http://172.20.10.5:8000/users/register/', data=data)
+
   context={'users':users, 'fields':search_fields}
   return render(request, 'myAdmin/index.html', context)
 
@@ -47,7 +56,18 @@ def turnstile(request):
 
 def skipUser(request):
   users = User.objects.all()
-  context={'users': users}
+  turnstiles = Turnstile.objects.all()
+  if request.method == 'POST':
+    user = request.POST['user']
+    tourniket = request.POST['kek']
+    data = {
+      'user': user,
+      'turnstile': tourniket
+    }
+    # print(tourniket)
+    r = requests.post('http://172.20.10.5:8000/attendances/create/', data=data)
+    print(r)
+  context={'users': users, 'turnstiles':turnstiles}
   return render(request, 'myAdmin/skip-user.html', context)
 
 def settings(request):
