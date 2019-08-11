@@ -1,38 +1,50 @@
-<form>
+<form method="POST">
+    {% csrf_token %}
+
     <h2 class="text-title uk-modal-title">Добавление пользователя</h2>
 
     <div class="add-user-modal__content">
         <div class="uk-margin add-user-modal__field">
             <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: user"></span>
-            <input class="uk-input" type="text" placeholder="Имя пользователя">
+            <input class="uk-input" type="text" placeholder="Имя пользователя" name="usermane">
             </div>
         </div>
 
         <div class="uk-margin add-user-modal__field">
             <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: lock"></span>
-            <input class="uk-input" type="text" placeholder="Пароль">
+            <input class="uk-input" type="text" placeholder="Пароль" name="pass">
             </div>
         </div>
 
-        <div class="add-user-modal-upload-box uk-flex uk-flex-between">
-            <div class="add-user-modal__field add-user-modal__upload">
-            <div class="js-upload uk-placeholder uk-text-center">
-                <span uk-icon="icon: cloud-upload"></span>
-                <div uk-form-custom>
-                    <input type="file" multiple>
-                    <span class="uk-link">selecting one</span>
-                </div>
-            </div>
+        <div class="add-user-modal-upload-box">
+				<ul class="add-user-modal-upload-box__tab" uk-tab>
+					<li><a href="#">Upload</a></li>
+					<li><a href="#">Take a picture</a></li>
+				</ul>
 
-            <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
-            </div>
+				<ul class="uk-switcher uk-margin">
+					<li>
+						<div class="add-user-modal__field add-user-modal__upload">
+							<div class="js-upload uk-placeholder uk-text-center">
+								<span uk-icon="icon: cloud-upload"></span>
+								<div uk-form-custom>
+									<input type="file">
+									<span class="uk-link">Selecting one</span>
+								</div>
+							</div>
 
-            <div class="add-user-modal__upload">
-            <button class="default-btn">Take a picture</button>
-            </div>
-        </div>
+							<progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+						</div>
+					</li>
+					<li>
+						<div class="add-user-modal__upload">
+							<button class="default-btn">TAKE A PICTURE</button>
+						</div>
+					</li>
+				</ul>
+			</div>
 
         <div class="add-user-modal__field uk-flex uk-flex-between">
             <div>
@@ -49,6 +61,6 @@
 
     <p class="uk-text-right">
         <button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
-        <button class="uk-button uk-button-primary" type="button">Сохранить</button>
+        <button class="uk-button uk-button-primary" type="submit">Сохранить</button>
     </p>
 <form>

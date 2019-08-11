@@ -89,6 +89,10 @@ html body .content {
 
 /* Styles */
 
+.add-user-modal-upload-box__tab {
+   justify-content: space-evenly;
+}
+
 .add-user-modal-upload-box {
    margin-bottom: 20px;
 }
@@ -96,6 +100,7 @@ html body .content {
 .add-user-modal__upload button {
    width: 100%;
    height: 100%;
+   padding: 16.5px 0;
    display: block;
 }
 
