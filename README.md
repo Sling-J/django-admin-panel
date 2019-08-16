@@ -21,7 +21,7 @@ pip install django-filter
 
 pip install cmake
 
-Install Visual Studio build tools from https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15#.
+Install Visual Studio build tools from https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16.
 
 In Visual Studio 2017 go to the Individual Components tab, Visual C++ Tools for Cmake, and check the checkbox under the "Compilers, build tools and runtimes" section.
 
