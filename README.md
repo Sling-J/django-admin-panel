@@ -23,9 +23,9 @@ pip install cmake
 
 Download appropriate version of cmake for your pc https://cmake.org/download/
 
-Install Visual Studio build tools from https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16.
+Install Visual Studio build tools from https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15.
 
-In Visual Studio 2019 go to the Individual Components tab, Visual C++ Tools for Cmake, and check the checkbox under the "Compilers, build tools and runtimes" section.
+In Visual Studio 2017 go to the Individual Components tab, Visual C++ Tools for Cmake, and check the checkbox under the "Compilers, build tools and runtimes" section.
 
 pip install dlib==19.17.0 
 
